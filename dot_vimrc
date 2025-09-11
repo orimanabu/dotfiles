@@ -1,0 +1,78 @@
+"let $PATH = "/Users/ori/.local/bin:".$PATH
+"let g:python3_host_prog = '/Users/ori/.pyenv/shims/python3'
+"set rtp+=/Users/ori/.local/lib/python3.11/site-packages/powerline/bindings/vim
+
+" for ctags
+set tags=./tags;$HOME
+nnoremap <C-]> g<C-]>
+inoremap <C-]> <ESC>g<C-]>
+
+syntax enable
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
+set encoding=utf-8
+set fileencodings=utf-8,euc-jp,cp932,iso-2022-jp
+scriptencoding utf-8
+
+set backspace=start,eol,indent  " backspace everywhere
+set whichwrap=b,s,[,],<,>,~     " wrap cursor
+set mouse=                      " never use mouse
+"set nohlsearch                  " no highlight while searching
+set hlsearch
+"set number                      " show line number
+set incsearch                   " incremental search
+set ignorecase                  " case insensitive search
+set smartcase                   " ignore ignorecase for capital search queries
+set guicursor=a:blinkon0        " supress cursor blinking
+
+set display=lastline            " 最後の行が長すぎても表示する
+
+set nobackup
+"set undofile
+set noswapfile
+
+python3 sys.path.append('/Users/ori/.local/lib/python3.11/site-packages/')
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
+set laststatus=2 " Always display the statusline in all windows
+set showtabline=2 " Always display the tabline, even if there is only one tab
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+set t_Co=256
+
+let g:airline_theme='luna'
+
+
+call plug#begin('~/.vim/plugged')
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'mattn/vim-goimports'
+Plug 'tyru/caw.vim'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+call plug#end()
+
+nmap <C-K> <Plug>(caw:hatpos:toggle)
+vmap <C-K> <Plug>(caw:hatpos:toggle)
+
+nmap <silent> gd :LspDefinition<CR>
+"let g:lsp_diagnostics_signs_enabled = 0
+"let g:lsp_document_code_action_signs_enabled = 0
+"let g:lsp_diagnostics_enabled = 0
+let g:lsp_settings = {
+\  'clangd': {
+\    'disabled': 1,
+\  },
+\}
+
+if executable('rustup')
+    au User lsp_setup call lsp#register_server({
+       \ 'name': 'rust-analyzer',
+       \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rust-analyzer']},
+       \ 'allowlist': ['rust'],
+       \ })
+endif
