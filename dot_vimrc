@@ -8,9 +8,6 @@ nnoremap <C-]> g<C-]>
 inoremap <C-]> <ESC>g<C-]>
 
 syntax enable
-" set background=dark
-" let g:solarized_termcolors=256
-" colorscheme solarized
 set encoding=utf-8
 set fileencodings=utf-8,euc-jp,cp932,iso-2022-jp
 scriptencoding utf-8
@@ -48,6 +45,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'ericbn/vim-solarized'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'mattn/vim-goimports'
@@ -76,3 +74,9 @@ if executable('rustup')
        \ 'allowlist': ['rust'],
        \ })
 endif
+
+""" color scheme
+set termguicolors
+set background=dark
+" let g:solarized_termcolors=256
+colorscheme solarized
