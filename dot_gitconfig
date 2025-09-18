@@ -1,0 +1,51 @@
+[user]
+	name = Manabu Ori
+	email = manabu.ori@gmail.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	pager = true
+[core]
+	pager = less -FRSX
+	excludesfile = /Users/ori/.gitignore_global
+	whitespace = -trailing-space,-space-before-tab
+	editor = vim
+[push]
+	default = current
+[gitreview]
+	username = orimanabu
+[ghq]
+	root = ~/devel/src
+[credential]
+	helper = store
+[pull]
+	ff = only
+[alias]
+	l = log --date=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn %Creset%s'
+	ll = log --stat --decorate=short --pretty=format:'%C(yellow)%h %Cgreen%cr %Cblue%cn%Cred%d %Creset%s %C(cyan)%b'
+	lg = log --graph --date=short --decorate=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn%Cred%d %Creset%s'
+	lm = log --merges --pretty=format:'%C(yellow)%h %Cgreen%ci %Cblue%cn%Cred%d %Creset%s %C(cyan)%b'
+	s = status --short --branch
+	info = remote show origin
+	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
+	tree = log --graph --pretty='format:%C(yellow)%h%Creset%Cred%d%Creset %s%n'
+
+[init]
+	defaultBranch = main
+[pager]
+    # diff = delta
+    #log = delta
+    #reflog = delta
+    #show = delta
+[interactive]
+    #diffFilter = delta --color-only --features=interactive
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[http]
+	sslVerify = false

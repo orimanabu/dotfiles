@@ -8,9 +8,9 @@ nnoremap <C-]> g<C-]>
 inoremap <C-]> <ESC>g<C-]>
 
 syntax enable
-set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
+" set background=dark
+" let g:solarized_termcolors=256
+" colorscheme solarized
 set encoding=utf-8
 set fileencodings=utf-8,euc-jp,cp932,iso-2022-jp
 scriptencoding utf-8
@@ -32,10 +32,10 @@ set nobackup
 "set undofile
 set noswapfile
 
-python3 sys.path.append('/Users/ori/.local/lib/python3.11/site-packages/')
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
+" python3 sys.path.append('/Users/ori/.local/lib/python3.11/site-packages/')
+" python3 from powerline.vim import setup as powerline_setup
+" python3 powerline_setup()
+" python3 del powerline_setup
 set laststatus=2 " Always display the statusline in all windows
 set showtabline=2 " Always display the tabline, even if there is only one tab
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
