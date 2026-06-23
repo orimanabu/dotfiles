@@ -29,6 +29,7 @@ unset rc
 ###
 
 export EDITOR=vim
+export GOPATH=${HOME}/devel
 
 eval "$(mise activate bash)"
 alias g='pushd $(ghq root)/$(ghq list | peco)'
