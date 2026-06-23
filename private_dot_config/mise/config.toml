@@ -1,5 +1,6 @@
 [tools]
 deno = "latest"
+gh = "latest"
 ghq = "latest"
 go = "latest"
 helm = "latest"
@@ -11,3 +12,20 @@ peco = "latest"
 python = "3.14"
 rust = "latest"
 stern = "latest"
+
+[tasks.rust-alternatives]
+description = "Show Rust Alternatives"
+run = """
+cat <<END
+cat	: bat
+diff	: delta
+mtr	: ttl
+top	: btm
+httpie	: xh
+dig	: dog
+du	: ds, pdu
+git	: gitui
+xd	: hexyl
+ps	: procs
+END
+"""
