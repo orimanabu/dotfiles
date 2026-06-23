@@ -1,0 +1,2 @@
+--kinddef-C=X,export,exported symbol
+--regex-C=/EXPORT_SYMBOL(_GPL)?\((.+)\);/\2/X/{exclusive}
