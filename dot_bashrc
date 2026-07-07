@@ -32,6 +32,7 @@ if ! [[ "$PATH" =~ "$HOME/devel/bin" ]]; then
     PATH="$PATH:$HOME/devel/bin"
 fi
 export PATH
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 export PATH
 shopt -s histappend
@@ -49,3 +50,7 @@ alias otpecho="otp.py ; echo"
 alias open=xdg-open
 alias vpnup="sudo nmcli c up '1 - Red Hat Global VPN' --ask"
 
+export CLAUDE_CODE_USE_VERTEX=1
+export CLOUD_ML_REGION=global
+#export ANTHROPIC_VERTEX_PROJECT_ID=itpc-gcp-global-revenue-claude
+export ANTHROPIC_VERTEX_PROJECT_ID=itpc-gcp-xe-eng-claude

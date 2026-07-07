@@ -27,5 +27,6 @@ du	: ds, pdu
 git	: gitui
 xd	: hexyl
 ps	: procs
+markdown: glow
 END
 """

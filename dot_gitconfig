@@ -8,7 +8,8 @@
 	interactive = auto
 	pager = true
 [core]
-	pager = less -FRSX
+	#pager = less -FRSX
+	pager = iris
 	excludesfile = /Users/ori/.gitignore_global
 	whitespace = -trailing-space,-space-before-tab
 	editor = vim
@@ -39,6 +40,9 @@
     #log = delta
     #reflog = delta
     #show = delta
+	diff = iris
+	log = iris
+	show = iris
 [interactive]
     #diffFilter = delta --color-only --features=interactive
 

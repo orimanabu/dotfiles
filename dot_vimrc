@@ -2,6 +2,10 @@
 "let g:python3_host_prog = '/Users/ori/.pyenv/shims/python3'
 "set rtp+=/Users/ori/.local/lib/python3.11/site-packages/powerline/bindings/vim
 
+""" color scheme
+set termguicolors
+set background=dark
+
 " for ctags
 set tags=./tags;$HOME
 nnoremap <C-]> g<C-]>
@@ -38,45 +42,58 @@ set showtabline=2 " Always display the tabline, even if there is only one tab
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 set t_Co=256
 
-let g:airline_theme='luna'
+"let g:airline_theme='luna'
 
 
-"call plug#begin('~/.vim/plugged')
-"Plug 'prabirshrestha/async.vim'
-"Plug 'prabirshrestha/asyncomplete.vim'
-"Plug 'prabirshrestha/asyncomplete-lsp.vim'
+call plug#begin('~/.vim/plugged')
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 "Plug 'ericbn/vim-solarized'
-"Plug 'prabirshrestha/vim-lsp'
-"Plug 'mattn/vim-lsp-settings'
-"Plug 'mattn/vim-goimports'
-"Plug 'tyru/caw.vim'
-""Plug 'vim-airline/vim-airline'
-""Plug 'vim-airline/vim-airline-themes'
-"call plug#end()
-"
-"nmap <C-K> <Plug>(caw:hatpos:toggle)
-"vmap <C-K> <Plug>(caw:hatpos:toggle)
-"
-"nmap <silent> gd :LspDefinition<CR>
-""let g:lsp_diagnostics_signs_enabled = 0
-""let g:lsp_document_code_action_signs_enabled = 0
-""let g:lsp_diagnostics_enabled = 0
-"let g:lsp_settings = {
-"\  'clangd': {
-"\    'disabled': 1,
-"\  },
-"\}
-"
-"if executable('rustup')
-"    au User lsp_setup call lsp#register_server({
-"       \ 'name': 'rust-analyzer',
-"       \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rust-analyzer']},
-"       \ 'allowlist': ['rust'],
-"       \ })
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'mattn/vim-goimports'
+Plug 'tyru/caw.vim'
+Plug 'preservim/nerdtree'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+call plug#end()
+
+"if exists('g:plugs') && has_key(g:plugs, 'vim-solarized')
+"    let g:solarized_termcolors=256
+"    colorscheme solarized
 "endif
-"
-""" color scheme
-set termguicolors
-set background=dark
-"" let g:solarized_termcolors=256
-"colorscheme solarized
+
+if exists('g:plugs') && has_key(g:plugs, 'caw.vim')
+    nmap <C-K> <Plug>(caw:hatpos:toggle)
+    vmap <C-K> <Plug>(caw:hatpos:toggle)
+endif
+
+nmap <silent> gd :LspDefinition<CR>
+"let g:lsp_diagnostics_signs_enabled = 0
+"let g:lsp_document_code_action_signs_enabled = 0
+"let g:lsp_diagnostics_enabled = 0
+let g:lsp_settings = {
+\  'clangd': {
+\    'disabled': 1,
+\  },
+\  'typescript-language-server': {
+\    'workspace_config': {
+\      'typescript': {
+\        'suggestionActions': { 'enabled': v:false },
+\        'validate': { 'enable': v:true }
+\      },
+\      'javascript': {
+\        'suggestionActions': { 'enabled': v:false }
+\      }
+\    }
+\  }
+\ }
+
+if executable('rustup')
+    au User lsp_setup call lsp#register_server({
+       \ 'name': 'rust-analyzer',
+       \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rust-analyzer']},
+       \ 'allowlist': ['rust'],
+       \ })
+endif
