@@ -1,0 +1,4 @@
+font-feature = -dlig
+keybind = ctrl+m=text:\n
+#keybind = ctrl+enter=text:\n
+keybind = ctrl+i=text:\t
