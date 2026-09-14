@@ -49,8 +49,17 @@ alias otpcopy="otp.py | xclip -selection c"
 alias otpecho="otp.py ; echo"
 alias open=xdg-open
 alias vpnup="sudo nmcli c up '1 - Red Hat Global VPN' --ask"
+alias s='pushd $(find /mnt/sources/rhel*/sources/* -maxdepth 1 | peco)'
+alias rmbak='rm *~ \#*'
+alias sswireshark="xpra start ssh://mori@supportshell --start-child=/usr/bin/wireshark --idle-timeout=0 --exit-with-children"
+alias sslibreoffice="xpra start ssh://mori@supportshell --start-child=/usr/bin/libreoffice --idle-timeout=0 --exit-with-children"
 
 export CLAUDE_CODE_USE_VERTEX=1
 export CLOUD_ML_REGION=global
 #export ANTHROPIC_VERTEX_PROJECT_ID=itpc-gcp-global-revenue-claude
 export ANTHROPIC_VERTEX_PROJECT_ID=itpc-gcp-xe-eng-claude
+[ -f "/home/mori/.config/claude-code-vertex/env.sh" ] && . "/home/mori/.config/claude-code-vertex/env.sh"
+
+oc422() { export KUBECONFIG=~/.kube/kubeconfig-422; oc login -u kubeadmin -p $(cat ~/.kube/kubeadmin-422-password) --server=https://api.422.tt.testing:6443; }
+oc421() { export KUBECONFIG=~/.kube/kubeconfig-421; oc login -u kubeadmin -p $(cat ~/.kube/kubeadmin-421-password) --server=https://api.421.tt.testing:6443; }
+
