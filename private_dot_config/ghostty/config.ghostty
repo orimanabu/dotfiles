@@ -1,4 +1,7 @@
-font-feature = -dlig
 keybind = ctrl+m=text:\n
 #keybind = ctrl+enter=text:\n
 keybind = ctrl+i=text:\t
+font-feature = -dlig
+cursor-style-blink = false
+#shell-integration = bash
+shell-integration-features = sudo,title

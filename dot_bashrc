@@ -40,6 +40,10 @@ export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=99999
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
+if [[ "$TERM" = "xterm-ghostty" ]]; then
+	export TERM=xterm-256color
+fi
+
 export EDITOR=vim
 export GOPATH=${HOME}/devel
 

@@ -1,5 +1,6 @@
 [tools]
 "aqua:kubevirt/kubevirt/virtctl" = "latest"
+aws-cli = { version = "latest", symlink_bins = "true" }
 crane = "latest"
 deno = "latest"
 gh = "latest"
