@@ -2,6 +2,9 @@
 "let g:python3_host_prog = '/Users/ori/.pyenv/shims/python3'
 "set rtp+=/Users/ori/.local/lib/python3.11/site-packages/powerline/bindings/vim
 
+let mapleader = "\<Space>"
+nnoremap <Leader>s :EblookSearch <C-r><C-w>
+
 set bin noeol
 "set list
 
@@ -60,6 +63,7 @@ Plug 'tyru/caw.vim'
 Plug 'preservim/nerdtree'
 "Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
+Plug 'deton/eblook.vim'
 call plug#end()
 
 "if exists('g:plugs') && has_key(g:plugs, 'vim-solarized')
@@ -99,4 +103,19 @@ if executable('rustup')
        \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rust-analyzer']},
        \ 'allowlist': ['rust'],
        \ })
+endif
+
+if executable('eblook')
+    let eblook_dictlist1 = [
+      \{
+        \'book': '/home/mori/Data/dicts/KENKYUSHA_READERS_PLUS_V2',
+        \'name': 'plus',
+        \'title': '研究社リーダーズ＋プラスＶ２',
+      \},
+      \{
+        \'book': '/home/mori/Data/dicts/GENIUS_DAIEIWA',
+        \'name': 'genius',
+        \'title': 'ジーニアス英和大辞典',
+      \},
+    \]
 endif
