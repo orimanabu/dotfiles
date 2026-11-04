@@ -1,0 +1,30 @@
+Host mori-bastion
+	Hostname 54.178.150.213
+	User ec2-user
+
+Host supportshell-eu
+	Hostname supportshell-1.sush-001.prod.eu-central-1.aws.redhat.com
+	User mori
+Host supportshell-na supportshell
+	Hostname supportshell-1.sush-001.prod.us-west-2.aws.redhat.com
+	User mori
+
+Host cnv1
+	Hostname cee.infra.cnv1.cee.ral3.lab.eng.rdu2.redhat.com
+	User kni
+Host cnv2
+	Hostname cee.infra.cnv2.cee.ral3.lab.eng.rdu2.redhat.com
+	User kni
+Host cnv3
+	Hostname cee.infra.cnv3.cee.ral3.lab.eng.rdu2.redhat.com
+	User kni
+
+Host whaleshark
+	Hostname whaleshark.nrt.redhat.com
+	User ori
+Host thinkpad-1
+	Hostname 192.168.10.29
+	User ori
+Host aimax
+	Hostname 192.168.10.27
+	User ori
