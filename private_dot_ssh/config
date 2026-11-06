@@ -22,6 +22,9 @@ Host cnv3
 Host whaleshark
 	Hostname whaleshark.nrt.redhat.com
 	User ori
+Host thinkpad-2
+	Hostname 192.168.10.30
+	User mori
 Host thinkpad-1
 	Hostname 192.168.10.29
 	User ori
