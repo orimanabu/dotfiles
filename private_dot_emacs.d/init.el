@@ -67,6 +67,13 @@
            "/opt/homebrew/opt/gcc/lib/gcc/current/gcc/aarch64-apple-darwin24/14")
          ":"))
 
+;; "Warning (files): Missing ‘lexical-binding’ cookie" のポップアップを非表示にする
+(with-eval-after-load 'warnings
+  (add-to-list 'warning-suppress-types '(files missing-lexbind-cookie)))
+
+(add-to-list 'load-path (expand-file-name "~/.local/share/emacs/local"))
+
+
 (setq default-frame-alist
       (append '((width                . 140)  ; フレーム幅
                 (height               . 60 ) ; フレーム高
@@ -104,10 +111,12 @@
   (setq mac-option-modifier nil
         mac-command-modifier 'meta))
 
+(load "lookup")
+
 (progn
   (define-key global-map "\C-x\C-b" 'electric-buffer-list)
-  (load-file "~/bs-h.el")
-  ;;(load "bs-h")
+  ;;(load-file "~/bs-h.el")
+  (load "bs-h")
   (require 'bs)
   (setq bs--show-all t)
   (setq bs-default-configuration "all")
