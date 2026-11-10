@@ -77,9 +77,10 @@ if exists('g:plugs') && has_key(g:plugs, 'caw.vim')
 endif
 
 nmap <silent> gd :LspDefinition<CR>
-"let g:lsp_diagnostics_signs_enabled = 0
-"let g:lsp_document_code_action_signs_enabled = 0
-"let g:lsp_diagnostics_enabled = 0
+let g:lsp_diagnostics_signs_enabled = 0
+let g:lsp_document_code_action_signs_enabled = 0
+let g:lsp_diagnostics_enabled = 0
+
 let g:lsp_settings = {
 \  'clangd': {
 \    'disabled': 1,

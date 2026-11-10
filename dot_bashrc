@@ -64,6 +64,12 @@ export CLOUD_ML_REGION=global
 export ANTHROPIC_VERTEX_PROJECT_ID=itpc-gcp-xe-eng-claude
 [ -f "/home/mori/.config/claude-code-vertex/env.sh" ] && . "/home/mori/.config/claude-code-vertex/env.sh"
 
+function unset_virtex {
+	export CLAUDE_CODE_USE_VERTEX=
+	export CLOUD_ML_REGION=
+	export ANTHROPIC_VERTEX_PROJECT_ID=
+}
+
 oc422() { export KUBECONFIG=~/.kube/kubeconfig-422; oc login -u kubeadmin -p $(cat ~/.kube/kubeadmin-422-password) --server=https://api.422.tt.testing:6443; }
 oc421() { export KUBECONFIG=~/.kube/kubeconfig-421; oc login -u kubeadmin -p $(cat ~/.kube/kubeadmin-421-password) --server=https://api.421.tt.testing:6443; }
 

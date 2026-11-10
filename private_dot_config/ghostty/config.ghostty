@@ -1,3 +1,5 @@
+window-width = 200
+window-height = 60
 keybind = ctrl+m=text:\n
 #keybind = ctrl+enter=text:\n
 keybind = ctrl+i=text:\t
