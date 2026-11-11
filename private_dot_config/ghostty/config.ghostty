@@ -7,3 +7,4 @@ font-feature = -dlig
 cursor-style-blink = false
 #shell-integration = bash
 shell-integration-features = sudo,title
+term = xterm-256color
