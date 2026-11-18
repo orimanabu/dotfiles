@@ -32,6 +32,9 @@ Host thinkpad-2
 Host thinkpad-1
 	Hostname 192.168.10.29
 	User ori
+Host gb10
+	Hostname 192.168.10.34
+	User ori
 Host aimax
 	Hostname 192.168.10.27
 	User ori
