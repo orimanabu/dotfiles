@@ -1,0 +1,29 @@
+# Loopback entries; do not change.
+# For historical reasons, localhost precedes localhost.localdomain:
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+# See hosts(5) for proper format and other examples:
+# 192.168.1.10 foo.example.org foo
+# 192.168.1.13 bar.example.org bar
+
+192.168.10.27 aimax
+192.168.10.34 gb10	
+
+10.18.82.125 api.50.tt.testing
+10.18.82.125 console-openshift-console.apps.50.tt.testing
+10.18.82.125 oauth-openshift.apps.50.tt.testing
+10.18.82.125 assisted-image-service-multicluster-engine.apps.50.tt.testing
+10.18.82.125 hyperconverged-cluster-cli-download-openshift-cnv.apps.50.tt.testing
+10.18.82.125 cdi-uploadproxy-openshift-cnv.apps.50.tt.testing
+10.18.82.125 virt-exportproxy-openshift-cnv.apps.50.tt.testing
+10.18.82.125 forklift-inventory-openshift-mtv.apps.50.tt.testing
+
+10.18.82.125 api.422.tt.testing
+10.18.82.125 console-openshift-console.apps.422.tt.testing
+10.18.82.125 oauth-openshift.apps.422.tt.testing
+10.18.82.125 assisted-image-service-multicluster-engine.apps.422.tt.testing
+10.18.82.125 hyperconverged-cluster-cli-download-openshift-cnv.apps.422.tt.testing
+10.18.82.125 cdi-uploadproxy-openshift-cnv.apps.422.tt.testing
+10.18.82.125 virt-exportproxy-openshift-cnv.apps.422.tt.testing
+10.18.82.125 forklift-inventory-openshift-mtv.apps.422.tt.testing
+

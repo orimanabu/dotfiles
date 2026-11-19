@@ -1,3 +1,6 @@
+Host *
+	IdentityAgent ~/.1password/agent.sock
+
 Host mori-bastion
 	Hostname 54.178.150.213
 	User ec2-user
@@ -10,13 +13,16 @@ Host supportshell-na supportshell
 	User mori
 
 Host cnv1
-	Hostname cee.infra.cnv1.cee.ral3.lab.eng.rdu2.redhat.com
+	#Hostname cee.infra.cnv1.cee.ral3.lab.eng.rdu2.redhat.com
+	Hostname cee.infra.cnv1.cee.eng.rdu2.dc.redhat.com
 	User kni
 Host cnv2
-	Hostname cee.infra.cnv2.cee.ral3.lab.eng.rdu2.redhat.com
+	#Hostname cee.infra.cnv2.cee.ral3.lab.eng.rdu2.redhat.com
+	Hostname cee.infra.cnv2.cee.eng.rdu2.dc.redhat.com
 	User kni
 Host cnv3
-	Hostname cee.infra.cnv3.cee.ral3.lab.eng.rdu2.redhat.com
+	#Hostname cee.infra.cnv3.cee.ral3.lab.eng.rdu2.redhat.com
+	Hostname cee.infra.cnv3.cee.eng.rdu2.dc.redhat.com
 	User kni
 
 Host whaleshark
