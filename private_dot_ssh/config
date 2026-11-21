@@ -1,6 +1,6 @@
 Host *
 	ForwardAgent yes
-	IdentityAgent ~/.1password/agent.sock
+#	IdentityAgent ~/.1password/agent.sock
 
 Host mori-bastion
 	Hostname 54.178.150.213

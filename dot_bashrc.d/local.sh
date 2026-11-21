@@ -2,6 +2,11 @@
 ### local settings
 ###
 
+# # Use forwarded SSH_AUTH_SOCK if available; otherwise, fall back to local 1Password agent.
+if [ -z "${SSH_AUTH_SOCK:-}" ] && [ -S "$HOME/.1password/agent.sock" ]; then
+    export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
+fi
+
 if ! [[ "$PATH" =~ "$HOME/devel/bin" ]]; then
     PATH="$PATH:$HOME/devel/bin"
 fi
