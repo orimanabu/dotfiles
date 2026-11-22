@@ -34,6 +34,9 @@ alias rmbak='rm *~ \#*'
 
 # mise
 export MISE_ENV="$(. /etc/os-release && echo "$ID")"
+if [ -e /etc/dgx-release ]; then
+  export MISE_ENV="${MISE_ENV:+$MISE_ENV,}dgx"
+fi
 eval "$(mise activate bash)"
 
 # peco

@@ -1,2 +1,2 @@
-[tools]
-chezmoi = "latest"
+#[tools]
+#chezmoi = "latest"
