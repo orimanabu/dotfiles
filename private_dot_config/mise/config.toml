@@ -5,7 +5,7 @@ distro = "{{ exec(command=\"sh -c '. /etc/os-release && echo $ID'\") | trim }}"
 PKG_MANAGER = "{% if vars.distro == 'ubuntu' %}apt{% elif vars.distro == 'fedora' %}dnf{% endif %}"
 
 [tools]
-"aqua:kubevirt/kubevirt/virtctl" = "latest"
+"aqua:kubevirt/kubevirt/virtctl" = { version = "latest", os = ["linux/x64"] }
 aws-cli = { version = "latest", symlink_bins = "true" }
 codex = "latest"
 crane = "latest"
