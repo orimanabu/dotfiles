@@ -43,3 +43,12 @@ ps	: procs
 markdown: glow
 END
 """
+
+[tasks.mise-config]
+description = "Show config files"
+run = """
+mise config
+mise -E ubuntu config
+mise -E fedora config
+mise ls
+"""
