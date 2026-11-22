@@ -1,11 +1,12 @@
 [vars]
 distro = "{{ exec(command=\"sh -c '. /etc/os-release && echo $ID'\") | trim }}"
+is_dgx = "{{ exec(command='test -e /etc/dgx-release && echo true || echo false') | trim }}"
 
 [env]
 PKG_MANAGER = "{% if vars.distro == 'ubuntu' %}apt{% elif vars.distro == 'fedora' %}dnf{% endif %}"
 
 [tools]
-"aqua:kubevirt/kubevirt/virtctl" = { version = "latest", os = ["linux/x64"] }
+"aqua:kubevirt/kubevirt/virtctl" = "latest"
 aws-cli = { version = "latest", symlink_bins = "true" }
 codex = "latest"
 crane = "latest"
@@ -51,4 +52,10 @@ mise config
 mise -E ubuntu config
 mise -E fedora config
 mise ls
+"""
+
+[tasks.show-vars]
+run = """
+echo distro={{ vars.distro }}
+echo is_dgx={{ vars.is_dgx }}
 """
