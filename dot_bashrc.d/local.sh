@@ -33,6 +33,7 @@ alias vpnup="sudo nmcli c up '1 - Red Hat Global VPN' --ask"
 alias rmbak='rm *~ \#*'
 
 # mise
+export MISE_ENV="$(. /etc/os-release && echo "$ID")"
 eval "$(mise activate bash)"
 
 # peco
