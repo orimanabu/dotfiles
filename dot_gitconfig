@@ -9,7 +9,7 @@
 	pager = true
 [core]
 	#pager = less -FRSX
-	pager = iris
+	pager = delta
 	excludesfile = /Users/ori/.gitignore_global
 	whitespace = -trailing-space,-space-before-tab
 	editor = vim
@@ -40,9 +40,9 @@
     #log = delta
     #reflog = delta
     #show = delta
-	diff = iris
-	log = iris
-	show = iris
+	diff = delta
+	log = delta
+	show = delta
 [interactive]
     #diffFilter = delta --color-only --features=interactive
 
@@ -53,3 +53,7 @@
 	required = true
 [http]
 	sslVerify = false
+[delta]
+	navigate = true
+	line-numbers = true
+	side-by-side = true
