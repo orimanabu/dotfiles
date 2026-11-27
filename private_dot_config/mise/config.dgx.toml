@@ -1,3 +1,9 @@
 [tools]
 chezmoi = "latest"
 uv = "latest"
+
+[tasks.nvitop]
+run = "cd ~/devel/src/github.com/XuehaiPan/nvitop && uvx nvitop"
+
+[tasks.nv-monitor]
+run = "cd ~/devel/src/github.com/wentbackward/nv-monitor && ./nv-monitor"
