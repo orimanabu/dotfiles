@@ -6,12 +6,16 @@ if [ x"$#" != x"1" ]; then
 fi
 subcmd=$1; shift
 
-casketsdir=${HOME}/Data/caskets
+#casketsdir=${HOME}/Data/caskets
+casketsdir=/mnt/data/caskets
 mntdir=/mnt/sources
 sudo chown $(whoami):wheel /mnt/sources
 
 case ${subcmd} in
 mount|start)
+	sudo cryptsetup luksOpen /dev/nvme0n1p1 luks1
+	sudo mount /dev/mapper/luks1 /mnt/data
+
 	mkdir -p ${mntdir}/rhel7
 	sudo mount -t squashfs ${casketsdir}/casket-20230430-rhel7.sqfs.xz ${mntdir}/rhel7
 
