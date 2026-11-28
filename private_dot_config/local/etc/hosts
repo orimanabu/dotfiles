@@ -6,7 +6,7 @@
 # 192.168.1.10 foo.example.org foo
 # 192.168.1.13 bar.example.org bar
 
-192.168.10.27 aimax
+192.168.10.27 aimax strixhalo
 192.168.10.34 gb10	
 
 10.18.82.125 api.50.tt.testing

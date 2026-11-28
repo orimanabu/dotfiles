@@ -42,6 +42,6 @@ Host thinkpad-1
 Host gb10
 	Hostname 192.168.10.34
 	User ori
-Host aimax
+Host aimax strixhalo
 	Hostname 192.168.10.27
 	User ori

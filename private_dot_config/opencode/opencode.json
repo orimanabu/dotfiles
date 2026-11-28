@@ -1,0 +1,44 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "litellm-local": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Local Cluster (GB10 + StrixHalo)",
+      "options": {
+        "baseURL": "http://127.0.0.1:4000/v1",
+        "apiKey": "sk-litellm-local"
+      },
+      "models": {
+        "gb10": {
+          "name": "GB10: Qwen3.8-Flash-Next-NVFP4 (Orchestrator)",
+          "limit": {
+            "context": 65536,
+            "output": 16384
+          }
+        },
+        "strixhalo": {
+          "name": "StrixHalo: Qwen3-Coder-Next-Q4_K_M (Coder)",
+          "limit": {
+            "context": 131072,
+            "output": 16384
+          }
+        }
+      }
+    }
+  },
+  "model": "litellm-local/strixhalo",
+  "small_model": "litellm-local/strixhalo",
+  "agent": {
+    "plan": {
+      "model": "litellm-local/gb10",
+      "temperature": 0.2
+    },
+    "build": {
+      "model": "litellm-local/strixhalo",
+      "temperature": 0.3
+    },
+    "explore": {
+      "model": "litellm-local/strixhalo"
+    }
+  }
+}

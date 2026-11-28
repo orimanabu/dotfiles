@@ -120,7 +120,8 @@ providers:
   openai:
     enabled: true
     #model: Qwen3.8-Flash-Next-FP4-Local
-    model: Qwen3.6-35B-A3B-NVFP4
+    #model: Qwen3.6-35B-A3B-NVFP4
+    model: Qwen3.8-Flash-Next-NVFP4
     #model: Qwen3.6-35B-A3B-uncensored-heretic-fixed2
     #model: gpt-oss-120b-ultra-heretic
     configured: true
